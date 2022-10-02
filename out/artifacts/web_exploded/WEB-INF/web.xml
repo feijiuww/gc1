@@ -6,7 +6,7 @@
          version="4.0">
     <servlet>
         <servlet-name>DetailServlet</servlet-name>
-        <servlet-class>cn.hbpu.discussion.servlet.DetailServlet</servlet-class>
+        <servlet-class>cn.hbpu.jiazhao.servlet.DetailServlet</servlet-class>
         <init-param>
             <param-name>encoding</param-name>
             <param-value>utf-8</param-value>

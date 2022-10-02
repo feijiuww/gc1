@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
@@ -26,10 +25,9 @@
                 font-size: 3.5rem;
             }
         }
-        .title1
-        {
-           position: absolute;
-            right: 150px;
+        .container{
+            margin-top: 15px;
+            margin-bottom: 30px;
         }
     </style>
 
@@ -38,46 +36,45 @@
     <link href="css/album.css" rel="stylesheet">
 </head>
 <body>
-<header>
-    <div class="collapse bg-dark" id="navbarHeader">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-md-7 py-4">
-                    <h4 class="text-white">About</h4>
-                    <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
-                </div>
-                <div class="col-sm-4 offset-md-1 py-4">
-                    <h4 class="text-white">Contact</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                        <li><a href="#" class="text-white">Like on Facebook</a></li>
-                        <li><a href="#" class="text-white">Email me</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="navbar navbar-dark bg-dark shadow-sm">
-        <div class="container d-flex justify-content-between">
-            <a href="#" class="navbar-brand d-flex align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                <strong>驾校</strong>
-            </a>
-            <div class="title1">
-            <c:choose>
-                <c:when test="${user!=null}">${user}</c:when>
-                <c:otherwise><a href="login2.jsp">登录</a></c:otherwise>
-            </c:choose>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">资讯页面</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/jiazhao/index">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active"  href="/jiazhao/index">资讯</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">社区</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="/jiazhao/PersonalServlet" >个人中心</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" >我的考试</a>
+            </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+
+            <input class="form-control mr-sm-2" type="text" placeholder="搜索资讯" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                <c:choose>
+                    <c:when test="${user!=null}">${user}</c:when>
+                    <c:otherwise><a href="login2.jsp">登录</a></c:otherwise>
+                </c:choose>
             </button>
 
-        </div>
+        </form>
     </div>
-</header>
+</nav>
 
-<main role="main">
+<main role="main" class="container">
 
 
 
